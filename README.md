@@ -1,5 +1,7 @@
 # ubuntu-quick-setup
 
 ```shell
-curl -O https://raw.githubusercontent.com/StanleySun233/ubuntu-quick-setup/main/setup.sh && chmod x setup.sh && ./setup.sh
+git clone git@github.com:StanleySun233/ubuntu-quick-setup.git
+cd ubuntu-quick-setup
+sh setup.sh
 ```
