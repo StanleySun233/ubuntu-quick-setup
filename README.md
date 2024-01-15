@@ -9,4 +9,4 @@ sh setup.sh
 ## Current Usage:
 1. apt setup
 2. docker setup
-2.1. add some docker containers
+  2.1. add some docker containers
