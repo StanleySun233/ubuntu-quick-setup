@@ -54,7 +54,7 @@ docker run --name minio -d \
 ```shell
 docker run --detach --restart always --publish 8182:8182 --name sshwifty niruix/sshwifty:latest
 ```
-## 6.hed
+## 6.heimdall
 ```shell
 docker run -d \
   --name=heimdall \
