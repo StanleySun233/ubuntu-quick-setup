@@ -77,7 +77,7 @@ docker run -d \
   linuxserver/heimdall
 ```
 
-## 7 neo4j
+## 7. neo4j
 ```shell
 docker run -d -p 7474:7474 -p 7687:7687 --name neo4j \
 -e "NEO4J_AUTH=neo4j/123456" \
@@ -86,4 +86,9 @@ docker run -d -p 7474:7474 -p 7687:7687 --name neo4j \
 -v /usr/local/soft/neo4j/conf:/var/lib/neo4j/conf \
 -v /usr/local/soft/neo4j/import:/var/lib/neo4j/import \
 neo4j:3.5.22-community
+```
+
+## 8. labelstudio
+```shell
+docker run -itd -u root -p 8080:8080 -v /data/VideoInference/label-studio/data:/label-studio/data  -e DATA_UPLOAD_MAX_NUMBER_FILES=10000  heartexlabs/label-studio:latest
 ```
