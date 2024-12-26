@@ -13,6 +13,9 @@ bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm ~/miniconda3/miniconda.sh
 source ~/miniconda3/bin/activate
 conda init --all
+
+pip install jupyter notebook
+nohup jupyter lab --ip=0.0.0.0 --port=2333 --no-browser > ~/.jupyter.log 2>&1 &
 ```
 
 ## Current Usage:
