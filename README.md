@@ -27,8 +27,8 @@ nohup jupyter lab --ip=0.0.0.0 --port=2333 --no-browser > ~/.jupyter.log 2>&1 &
 ### for shell
 ```shell
 docker run -p 3306:3306 --name mysql \
-  -v /mydata/mysql/log:/var/log/mysql \
-  -v /mydata/mysql/data:/var/lib/mysql \
+  -v ~/mysql/log:/var/log/mysql \
+  -v ~/mysql/data:/var/lib/mysql \
   --restart=always \
   -e MYSQL_ROOT_PASSWORD=123456 \
   -d mysql:5.7
