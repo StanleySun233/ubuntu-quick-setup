@@ -39,6 +39,7 @@ docker run -p 3306:3306 --name mysql -v /mydata/mysql/log:/var/log/mysql -v /myd
 ```
 
 ## 2. portainer
+### for shell
 ```shell
 docker run -d -p 8005:9000 \
   --restart=always \
@@ -46,6 +47,10 @@ docker run -d -p 8005:9000 \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v /home/sjsun/docker/portainer/data:/data \
    portainer/portainer-ce
+```
+### for cmd
+```cmd
+docker run -d -p 8005:9000 --restart=always --name portainer -v /var/run/docker.sock:/var/run/docker.sock -v /home/sjsun/docker/portainer/data:/data portainer/portainer-ce
 ```
 
 ## 3. redis
