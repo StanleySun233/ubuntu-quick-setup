@@ -3,7 +3,7 @@
 ```shell
 git clone https://github.com/StanleySun233/ubuntu-quick-setup.git
 cd ubuntu-quick-setup
-sh setup.sh
+sh setup.bash
 ```
 install miniconda
 ```shell
@@ -27,8 +27,6 @@ nohup jupyter lab --ip=0.0.0.0 --port=2333 --no-browser > ~/.jupyter.log 2>&1 &
 ### for shell
 ```shell
 docker run -p 3306:3306 --name mysql \
-  -v ~/mysql/log:/var/log/mysql \
-  -v ~/mysql/data:/var/lib/mysql \
   --restart=always \
   -e MYSQL_ROOT_PASSWORD=123456 \
   -d mysql:5.7
@@ -45,7 +43,6 @@ docker run -d -p 8005:9000 \
   --restart=always \
   --name portainer \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  -v /home/sjsun/docker/portainer/data:/data \
    portainer/portainer-ce
 ```
 ### for cmd
@@ -80,8 +77,7 @@ docker run -d \
   -e TZ=Asia/Shanghai \
   -p 8001:80 \
   -p 8002:443 \
-  -v /path/to/config:/config \
-  --restart unless-stopped \
+  --restart always \
   linuxserver/heimdall
 ```
 
@@ -89,14 +85,10 @@ docker run -d \
 ```shell
 docker run -d -p 7474:7474 -p 7687:7687 --name neo4j \
 -e "NEO4J_AUTH=neo4j/123456" \
--v /usr/local/soft/neo4j/data:/data \
--v /usr/local/soft/neo4j/logs:/logs \
--v /usr/local/soft/neo4j/conf:/var/lib/neo4j/conf \
--v /usr/local/soft/neo4j/import:/var/lib/neo4j/import \
 neo4j:3.5.22-community
 ```
 
 ## 8. labelstudio
 ```shell
-docker run -itd -u root -p 8080:8080 -v /data/VideoInference/label-studio/data:/label-studio/data  -e DATA_UPLOAD_MAX_NUMBER_FILES=10000  heartexlabs/label-studio:latest
+docker run -itd -u root -p 8080:8080 -e DATA_UPLOAD_MAX_NUMBER_FILES=10000 --name labstu heartexlabs/label-studio:latest
 ```
