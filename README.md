@@ -92,3 +92,8 @@ neo4j:3.5.22-community
 ```shell
 docker run -itd -u root -p 8080:8080 -e DATA_UPLOAD_MAX_NUMBER_FILES=10000 --name labstu heartexlabs/label-studio:latest
 ```
+
+## 9. minecraft-server
+```shell
+sudo docker run -d -it -p 6666:25565 --name mcsv -e TYPE=FORGE -e VERSION=1.20.1 -e EULA=TRUE -m 8g -v /data:/data -e ONLINE_MODE=FALSE -e INIT_MEMORY=2G -e MAX_MEMORY=8G itzg/minecraft-server
+```
