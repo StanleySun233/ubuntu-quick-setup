@@ -107,4 +107,17 @@ docker run -d \
   --restart always \
   filebrowser/filebrowser
 ```
+## 11. postgresql
+### for shell
+```shell
+docker run -d  \
+  --name postgres \
+  -p 5432:5432 \
+  -e POSTGRES_PASSWORD=password \
+  -e POSTGRES_USER=root \
+  postgres
+```
+### for cmd
+```cmd
+docker run -d --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=password -e POSTGRES_USER=root postgres
 ```
