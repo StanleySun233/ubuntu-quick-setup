@@ -121,3 +121,14 @@ docker run -d  \
 ```cmd
 docker run -d --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=password -e POSTGRES_USER=root postgres
 ```
+
+## 12. registry
+```shell
+docker run -d --name registry-mirror \
+  -p 8004:5000 \
+  -v /opt/docker-registry:/var/lib/registry \
+  -e REGISTRY_PROXY_REMOTEURL="https://registry-1.docker.io" \
+  --restart=always \
+  registry:2
+```
+
