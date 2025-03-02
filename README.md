@@ -132,3 +132,15 @@ docker run -d --name registry-mirror \
   registry:2
 ```
 
+## 13. nginx-proxy-manager
+```shell
+docker run -d \
+  --name=nginx-proxy-manager \
+  -p 80:80 \
+  -p 81:81 \
+  -p 443:443 \
+  -v /data:/data \
+  -v /letsencrypt:/etc/letsencrypt \
+  --restart=always \
+  jc21/nginx-proxy-manager
+```
