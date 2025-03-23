@@ -144,3 +144,8 @@ docker run -d \
   --restart=always \
   jc21/nginx-proxy-manager
 ```
+
+## 14. Windows
+```shell
+docker run -d --name win10 -p 8006:8006 -p 8007:3389 --device=/dev/kvm --device=/dev/net/tun -e DISK_SIZE=256G -e RAM_SIZE=16G -e CPU_CORES=4 -e USERNAME=ACC -e PASSWORD=PWD -e LANGUAGE=Chinese --cap-add NET_ADMIN -v ${PWD:-.}/windows:/storage --memory 2g --memory-swap 14g  --stop-timeout 120 dockurr/windows
+```
